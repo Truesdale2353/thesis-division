@@ -19,5 +19,9 @@ npm start
 ```
 The application should start at http://localhost:3000/
 
+# Application usage
+In the current version of the application, values cannot be uploaded to the system and is used mocked data instead.\
+When the application is started the group wont be divided, as a user you can use the filters on top, to currate the division. You can turn filters on and off along with setting a priority for a filter by dragging and dropping it. The left most filter has the highest priority. Click on the "CALCULATE" button to apply the changes.
+
 ## Contributing
 The project is souly a contribution of Kaloyan Velchev under Boyan Jekov's supervison
