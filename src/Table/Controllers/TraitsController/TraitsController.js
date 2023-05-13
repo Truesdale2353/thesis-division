@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Draggable } from "react-smooth-dnd";
 import { arrayMoveImmutable } from "array-move";
 import List from "@material-ui/core/List";
@@ -23,7 +23,7 @@ const TraitsController = ({ headerItems, updateHeaderItems }) => {
           <Draggable key={id}>
             <ListItem className="drag-handle">{item}</ListItem>
           </Draggable>
-        ))}
+        ))}      
       </Container>
     </List>
   );

@@ -1,4 +1,3 @@
-import data from "../data";
 import { filters as filterConstants } from "../constants";
 import { greedyPartitioning } from "./greedyPartitioning";
 
@@ -7,7 +6,7 @@ const normalize = (val, max, min) => (val - min) / (max - min);
 const traits = ["IS", "IN", "EN", "ES"];
 const sex = ["Male", "Female"];
 
-const filterDivision = (filters) => {
+const filterDivision = ({filters, data, groupVolume}) => {
   const percantageSplit = [50, 30, 20];
 
   let filterPriority = {};
@@ -18,8 +17,9 @@ const filterDivision = (filters) => {
   });
 
   const normalized = data.map((person) => {
+
     const normalizedTrait =
-      normalize(traits.indexOf(person.personality), 0, 4) *
+      normalize(traits.indexOf(person.personality.slice(2)), 0, 4) *
       filterPriority[filterConstants.TRAITS_ID];
     const normalizedSex =
       normalize(sex.indexOf(person.gender), 0, 2) *
@@ -34,7 +34,7 @@ const filterDivision = (filters) => {
     return { coeficient, ...person };
   });
 
-  const output = greedyPartitioning(normalized, 3);
+  const output = greedyPartitioning(normalized, groupVolume);
 
   return output;
 };

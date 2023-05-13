@@ -1,18 +1,16 @@
-import './App.css';
-import TableData from './Table/Table';
-import {TraitsControllerWithData} from './Table/TraitsController/TraitsControllerWithData'
-import data from './Table/data';
-import { useState } from 'react';
+import "./App.css";
+import { Header, GroupTable } from "./Table";
+import { useFilters, useUploadExcel, useSetGroupVolume } from "./Hooks";
 
 function App() {
- const [filters,setFilters]=useState({});
- const getFilters= (filters) =>{
-    setFilters({...filters});
- }
+  const [filters, getFilters] = useFilters();
+  const [data, uploadFile] = useUploadExcel();
+  const [groupVolume, setGroupVolume] = useSetGroupVolume();
+
   return (
     <div className="App">
-      <TraitsControllerWithData getFilters={getFilters} />
-      <TableData filters={filters}/>
+      <Header getFilters={getFilters} uploadFile={uploadFile} setGroupVolume={setGroupVolume} />
+      <GroupTable filters={filters} data={data} groupVolume={groupVolume} />
     </div>
   );
 }

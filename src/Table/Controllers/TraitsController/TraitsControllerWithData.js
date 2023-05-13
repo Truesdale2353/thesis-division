@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TraitsController from "./TraitsController";
-import { filters } from "../constants";
-import { SortingHeaderItem } from "../SortingHeader/SortingHeaderItem";
+import { filters } from "../../constants";
+import { SortingHeaderItem } from "../../SortingHeader/SortingHeaderItem";
 import Button from "@mui/material/Button";
+
 const TraitsControllerWithData = ({ getFilters }) => {
   const handleChange = (e) => {
     items.find((x) => x.id === e.target.id).isActive = e.target.checked;
@@ -48,7 +49,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
   ]);
 
   return (
-    <div className="sorting-header">
+    <>
       <TraitsController
         headerItems={items}
         updateHeaderItems={setItems}
@@ -60,7 +61,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
       >
         CALCULATE
       </Button>
-    </div>
+    </>
   );
 };
 
