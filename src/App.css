@@ -38,3 +38,19 @@ label {
   padding: 15px 0px 15px 10px;
   padding-right: 90px;
 }
+
+.MuiTableContainer-root {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.group-table {
+margin: 20px;
+}
+.group-table tr th  {
+  text-align: center;
+  justify-content: center;
+
+}

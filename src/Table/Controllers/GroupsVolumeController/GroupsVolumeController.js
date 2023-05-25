@@ -43,3 +43,15 @@ const GroupsVolumeController = ({ setGroupVolume }) => {
 };
 
 export { GroupsVolumeController };
+
+
+
+
+
+const calculateSum = (input = []) => {
+  let sum = 0;
+  for (let i = 0; i < input.length; i++) {
+    sum += i;
+  }
+  return sum;
+};

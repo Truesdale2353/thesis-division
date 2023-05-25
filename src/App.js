@@ -1,6 +1,7 @@
 import "./App.css";
-import { Header, GroupTable } from "./Table";
+import { Header } from "./Table";
 import { useFilters, useUploadExcel, useSetGroupVolume } from "./Hooks";
+import { TablesContainer } from "./Table/TablesContainer";
 
 function App() {
   const [filters, getFilters] = useFilters();
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header getFilters={getFilters} uploadFile={uploadFile} setGroupVolume={setGroupVolume} />
-      <GroupTable filters={filters} data={data} groupVolume={groupVolume} />
+      <TablesContainer filters={filters} data={data} groupVolume={groupVolume} />
     </div>
   );
 }
