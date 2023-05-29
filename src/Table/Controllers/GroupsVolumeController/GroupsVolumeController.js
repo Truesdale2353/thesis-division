@@ -4,23 +4,24 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { StyledGroupsVolumeController } from "./StyledGroupsVolumeController";
 
 const GroupsVolumeController = ({ setGroupVolume }) => {
-  const [age, setAge] = useState('');
+  const [volume, setVolume] = useState(1);
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setVolume(event.target.value);
     setGroupVolume(event.target.value);
   };
 
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <StyledGroupsVolumeController>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Group Size</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
+          value={volume}
           label="Group Size"
           onChange={handleChange}
         >
@@ -38,20 +39,8 @@ const GroupsVolumeController = ({ setGroupVolume }) => {
           <MenuItem value={12}>12</MenuItem>
         </Select>
       </FormControl>
-    </Box>
+    </StyledGroupsVolumeController>
   );
 };
 
 export { GroupsVolumeController };
-
-
-
-
-
-const calculateSum = (input = []) => {
-  let sum = 0;
-  for (let i = 0; i < input.length; i++) {
-    sum += i;
-  }
-  return sum;
-};

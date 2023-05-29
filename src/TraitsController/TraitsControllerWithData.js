@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TraitsController from "./TraitsController";
-import { filters } from "../../constants";
-import { SortingHeaderItem } from "../../SortingHeader/SortingHeaderItem";
-import Button from "@mui/material/Button";
+import { filters } from "../Table/constants";
+import { SortingHeaderItem } from "../Table/SortingHeader/SortingHeaderItem";
+import { StyledTraitsController } from './StyledTraitsController'
 
 const TraitsControllerWithData = ({ getFilters }) => {
   const handleChange = (e) => {
     items.find((x) => x.id === e.target.id).isActive = e.target.checked;
+    
   };
 
   const [items, setItems] = useState([
@@ -48,20 +49,18 @@ const TraitsControllerWithData = ({ getFilters }) => {
     },
   ]);
 
+  useEffect(()=>{
+    getFilters(items);
+  },[items]);
+
   return (
-    <>
+    <StyledTraitsController>
       <TraitsController
         headerItems={items}
         updateHeaderItems={setItems}
       ></TraitsController>
-      <Button
-        className="sorting-button"
-        variant="outlined"
-        onClick={() => getFilters(items)}
-      >
-        CALCULATE
-      </Button>
-    </>
+    </StyledTraitsController>
+      
   );
 };
 

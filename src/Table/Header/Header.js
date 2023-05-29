@@ -1,14 +1,30 @@
 import { useState } from "react";
-import { TraitsControllerWithData, GroupsVolumeController } from "../Controllers";
-import { FileUploader } from "../SortingHeader/test";
+import {
+  TraitsControllerWithData,
+  GroupsVolumeController,
+} from "../Controllers";
+import { Typography, Dialog } from "@mui/material";
+import { FileUploader } from "../../FileUploader/FileUploader";
+import { StyledHeaer } from "./StyledHeaderComponents/StyledHeader";
+import { ActionButtons } from "./ActionButtons";
 
-const Header = ({ getFilters, uploadFile, setGroupVolume }) => {
+const Header = ({ getFilters, uploadFile, setGroupVolume, onGenerate }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleUpload = (file) => {
+    uploadFile(file);
+    setOpen(false);
+  };
   return (
-    <div className="sorting-header">
+    <StyledHeaer>
+      <Typography> GROUPS CONTROLLER</Typography>
       <TraitsControllerWithData getFilters={getFilters} />
       <GroupsVolumeController setGroupVolume={setGroupVolume} />
-      <FileUploader onUpload={uploadFile}></FileUploader>
-    </div>
+      <ActionButtons onDialog={() => setOpen(true)} onGenerate={onGenerate} />
+      <Dialog open={open} onClose={() => setOpen(false)}>
+        <FileUploader onUpload={handleUpload}></FileUploader>{" "}
+      </Dialog>
+    </StyledHeaer>
   );
 };
 export { Header };

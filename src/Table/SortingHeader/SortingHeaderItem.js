@@ -1,15 +1,21 @@
-import * as React from "react";
+import React, { useState } from "react";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
 import Switch from "@mui/material/Switch";
+import {StyledFormControlLabel } from './StyledFormControlLabel';
 
 const SortingHeaderItem = ({
   id,
   label,
-  color,
   handleChange,
   defaultChecked,
 }) => {
+  const [isActive, setIsActive] = useState(defaultChecked);
+  const onChange = (e) =>{
+    handleChange(e);
+    setIsActive(!isActive);
+  }
+
   const styledLabel = () => {
     return (
       <Typography variant="h6" component="h2">
@@ -19,15 +25,16 @@ const SortingHeaderItem = ({
   };
   return (
     <div className="test">
-      <FormControlLabel
-        className="form-control-style"
-        color="#ab47bc"
+      <StyledFormControlLabel
+        isActive={isActive}
         control={
           <Switch
-            color="warning"
+          sx={{
+            color: '#8AA3F9',
+          }}
             id={id}
             defaultChecked={defaultChecked}
-            onChange={(e) => handleChange(e)}
+            onChange={(e) => onChange(e)}
           />
         }
         label={styledLabel()}

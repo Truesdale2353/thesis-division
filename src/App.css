@@ -1,40 +1,22 @@
-.form-group-contoller {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center;
-  justify-content: center;
-}
-
-.form-control-style {
-  padding: 2px 15px 2px 15px;
-  border: 1px solid #ab47bc;
-  border-radius: 15px;
-  background-color: #ab47bc;
-}
-
-.test{
-  font-weight: 700 !important;
-
-}
-
-.sorting-header {
+.container {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
 }
-.sorting-header
-.sorting-button{
-  margin-left: auto;
-  margin-right: 20px;
+
+.MuiDialog-container 
+.MuiDialog-paperScrollPaper {
+  border-radius: 25px;
+}
+
+.test {
+  font-weight: 700 !important;
 }
 
 .file-uploader {
   border-style: dashed;
   border-radius: 15%;
 }
-.file-uploader
-label {
+.file-uploader label {
   padding: 15px 0px 15px 10px;
   padding-right: 90px;
 }
@@ -43,14 +25,16 @@ label {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 10px;
 }
 
 .group-table {
-margin: 20px;
+  margin: 15px;
 }
-.group-table tr th  {
+.group-table tr th {
   text-align: center;
   justify-content: center;
+}
 
+.group-table thead {
+  background-color: #ECEDF2;
 }

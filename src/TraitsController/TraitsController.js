@@ -15,7 +15,7 @@ const TraitsController = ({ headerItems, updateHeaderItems }) => {
     <List>
       <Container
         dragHandleSelector=".drag-handle"
-        lockAxis="x"
+        lockAxis="y"
         orientation="horizontal"
         onDrop={onDrop}
       >
