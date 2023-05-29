@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import FormControlLabel from "@mui/material/FormControlLabel";
 import Typography from "@mui/material/Typography";
 import Switch from "@mui/material/Switch";
 import {StyledFormControlLabel } from './StyledFormControlLabel';
@@ -26,7 +25,7 @@ const SortingHeaderItem = ({
   return (
     <div className="test">
       <StyledFormControlLabel
-        isActive={isActive}
+        $isActive={isActive}
         control={
           <Switch
           sx={{

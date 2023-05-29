@@ -1,14 +1,15 @@
-import TableContainer from "@mui/material/TableContainer";
 import { GroupTable } from "./GroupTable";
 import { Paper } from "@mui/material";
 
+import { StyledTableContainer } from "./StyledTableContainer";
+
 const TablesContainer = ({ items }) => {
   return (
-    <TableContainer component={Paper}>
+    <StyledTableContainer component={Paper}>
       {items.map((group, index) => {
         return group.length > 0 && <GroupTable group={group} groupIndex={index} />;
       })}
-    </TableContainer>
+    </StyledTableContainer>
   );
 };
 export { TablesContainer };

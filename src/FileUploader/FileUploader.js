@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { StyledFileUploader } from "./StyledFileUploader";
 import { StyledTitle } from "./StyledTitle";
 import { StyledDropSection } from "./StyledDropSection";

@@ -1,4 +1,3 @@
-import { Header } from "../Table/Header/Header";
 import styled from "styled-components";
 
 const StyledTraitsController = styled.div`

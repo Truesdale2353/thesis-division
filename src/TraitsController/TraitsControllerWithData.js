@@ -51,7 +51,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
 
   useEffect(()=>{
     getFilters(items);
-  },[items]);
+  },[items, getFilters]);
 
   return (
     <StyledTraitsController>

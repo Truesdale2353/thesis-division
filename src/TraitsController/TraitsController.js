@@ -16,7 +16,7 @@ const TraitsController = ({ headerItems, updateHeaderItems }) => {
       <Container
         dragHandleSelector=".drag-handle"
         lockAxis="y"
-        orientation="horizontal"
+        orientation="vertical"
         onDrop={onDrop}
       >
         {headerItems.map(({ id, item }) => (
