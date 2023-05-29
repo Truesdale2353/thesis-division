@@ -7,6 +7,7 @@ import { Typography, Dialog } from "@mui/material";
 import { FileUploader } from "../../FileUploader/FileUploader";
 import { StyledHeaer } from "./StyledHeaderComponents/StyledHeader";
 import { ActionButtons } from "./ActionButtons";
+import { StyledMenuHeader } from "./StyledHeaderComponents/StyledMenuHeader"
 
 const Header = ({ getFilters, uploadFile, setGroupVolume, onGenerate }) => {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ const Header = ({ getFilters, uploadFile, setGroupVolume, onGenerate }) => {
   };
   return (
     <StyledHeaer>
-      <Typography> GROUPS CONTROLLER</Typography>
+      <StyledMenuHeader> GROUPS CONTROLLER</StyledMenuHeader>
       <TraitsControllerWithData getFilters={getFilters} />
       <GroupsVolumeController setGroupVolume={setGroupVolume} />
       <ActionButtons onDialog={() => setOpen(true)} onGenerate={onGenerate} />
