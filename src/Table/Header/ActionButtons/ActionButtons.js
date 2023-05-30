@@ -1,6 +1,6 @@
 import { StyledActionButtons } from "./StyledActionButtons";
 import Button from "@mui/material/Button";
-const ActionButtons = ({ onDialog, onGenerate }) => {
+const ActionButtons = ({ onDialog, onGenerate, enableGenerate }) => {
   return (
     <StyledActionButtons>
       <Button
@@ -17,6 +17,7 @@ const ActionButtons = ({ onDialog, onGenerate }) => {
       <Button
         className="sorting-button"
         onClick={onGenerate}
+        disabled={!enableGenerate}
         sx={{
           color: "#FFFFFF",
           height: "56px",

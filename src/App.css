@@ -8,19 +8,6 @@
   border-radius: 25px;
 }
 
-.test {
-  font-weight: 700 !important;
-}
-
-.file-uploader {
-  border-style: dashed;
-  border-radius: 15%;
-}
-.file-uploader label {
-  padding: 15px 0px 15px 10px;
-  padding-right: 90px;
-}
-
 .MuiTableContainer-root {
   display: flex;
   flex-direction: row;
@@ -42,4 +29,13 @@
 
 .group-table thead {
   background-color: #ECEDF2;
+}
+
+.sorting-label {
+  display: flex;
+  width: 190px;
+  text-align: center;
+}
+.draggable-indicator {
+  margin-left: auto;
 }

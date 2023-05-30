@@ -7,7 +7,7 @@ const TablesContainer = ({ items }) => {
   return (
     <StyledTableContainer component={Paper}>
       {items.map((group, index) => {
-        return group.length > 0 && <GroupTable group={group} groupIndex={index} />;
+        return group.length > 0 && <GroupTable group={group} groupIndex={index} key={index}/>;
       })}
     </StyledTableContainer>
   );
