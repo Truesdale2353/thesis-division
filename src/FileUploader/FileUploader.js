@@ -33,7 +33,7 @@ function FileUploader({ onUpload }) {
         onClick={handleClick}
       >
         <img  src={uploadFile} alt="upload file" style={{ marginTop:'70px'}}/>
-        <StyledTitle variant="h6">Click to open dialog or drag & drop your file</StyledTitle>
+        <StyledTitle variant="h6">Щракнете, за да отворите диалогов прозорец, или плъзнете и пуснете файла си</StyledTitle>
         <input
           style={{ display: "none" }}
           ref={inputRef}
