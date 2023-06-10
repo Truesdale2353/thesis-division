@@ -24,7 +24,7 @@ const Header = ({
   };
   return (
     <StyledHeaer>
-      <StyledMenuHeader> GROUPS CONTROLLER</StyledMenuHeader>
+      <StyledMenuHeader> Контролер на групи </StyledMenuHeader>
       <TraitsControllerWithData getFilters={getFilters} />
       <GroupsVolumeController setGroupVolume={setGroupVolume} />
       <ActionButtons

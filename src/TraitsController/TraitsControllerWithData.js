@@ -16,7 +16,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
       isActive: true,
       item: (
         <SortingHeaderItem
-          label="Sex"
+          label="Пол"
           id={filters.SEX_ID}
           handleChange={handleChange}
           defaultChecked
@@ -28,7 +28,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
       isActive: true,
       item: (
         <SortingHeaderItem
-          label="Personality Traits"
+          label="Личностни качества"
           id={filters.TRAITS_ID}
           handleChange={handleChange}
           defaultChecked
@@ -40,7 +40,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
       isActive: true,
       item: (
         <SortingHeaderItem
-          label="Experience"
+          label="Опит"
           id={filters.EXPERIENCE_ID}
           handleChange={handleChange}
           defaultChecked
@@ -51,7 +51,7 @@ const TraitsControllerWithData = ({ getFilters }) => {
 
   useEffect(()=>{
     getFilters(items);
-  },[items, getFilters]);
+  },[items]);
 
   return (
     <StyledTraitsController>

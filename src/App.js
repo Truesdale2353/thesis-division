@@ -10,16 +10,14 @@ function App() {
   const [data, uploadFile] = useUploadExcel();
   const [groupVolume, setGroupVolume] = useSetGroupVolume();
   const [items, setItems] = useState([]);
-  const [enableGenerate, setEnableGenerate] = useState(false);
+  //const [enableGenerate, setEnableGenerate] = useState(false);
 
-  useEffect(() => {
-    if (data.length > 0) {
-      setEnableGenerate(true);
-    }
-  }, [data]);
+  const enableGenerate = groupVolume <= data.length && groupVolume > 0 && data.length > 0
+  
   const onGenerate = () => {
     setItems(filterDivision({ filters, data, groupVolume }));
   };
+
   return (
     <div className="container">
       <Header
@@ -27,7 +25,9 @@ function App() {
         uploadFile={uploadFile}
         setGroupVolume={setGroupVolume}
         onGenerate={onGenerate}
-        enableGenerate={enableGenerate}
+        enableGenerate={
+          enableGenerate && groupVolume <= data.length && groupVolume > 0
+        }
       />
       <TablesContainer items={items} />
     </div>

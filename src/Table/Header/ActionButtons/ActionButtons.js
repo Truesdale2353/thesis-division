@@ -12,7 +12,7 @@ const ActionButtons = ({ onDialog, onGenerate, enableGenerate }) => {
           borderRadius: "11px",
         }}
       >
-        Change List
+        Нов лист
       </Button>
       <Button
         className="sorting-button"
@@ -29,7 +29,7 @@ const ActionButtons = ({ onDialog, onGenerate, enableGenerate }) => {
           },
         }}
       >
-        Split Groups
+        Разделяне по групи
       </Button>
     </StyledActionButtons>
   );

@@ -9,7 +9,7 @@ const GroupTable = ({ group, groupIndex }) => (
   <Table sx={{ width: '29%', height: 60}} aria-label="simple table" className="group-table">
     <TableHead>
       <TableRow>
-        <TableCell>{`Group ${groupIndex+1}`}</TableCell>
+        <TableCell>{`Група ${groupIndex+1}`}</TableCell>
       </TableRow>
     </TableHead>
     <TableBody>
